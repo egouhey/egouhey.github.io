@@ -29,74 +29,76 @@
 
 							<section id="Introduction">
 								<h2>Introduction</h2>
-								<p><span class="image right"><img src="images/ishibot2.jpg" alt="" /></span>Ishibot is an autonomous mobile platform, designed with the aim of participating to the French Robotics Cup. I am currently developing multiple features for this robot: constructing the robot's frame, training an AI model for object recognition, designing the power and motor control boards. I am also planning to implement a ROS (Robot Operating System) architecture on a Raspberry Pi and integrate additional actuators.</p>
+								<p><span class="image left"><img src="images/ishibot2.jpg" alt="" /></span>Ishibot is an autonomous mobile platform, designed with the aim of participating to the French Robotics Cup. I am currently developing multiple features for this robot: constructing the robot's frame, training an AI model for object recognition, designing the power and motor control boards. I am also planning to implement a ROS (Robot Operating System) architecture on a Raspberry Pi and integrate additional actuators.</p>
 								<ul class="actions">
-									<li><a href="#" class="button scrolly">Mechanics</a></li>
-									<li><a href="#" class="button scrolly">Power Board</a></li>
-									<li><a href="#" class="button scrolly">Motor Control</a></li>
-									<li><a href="#" class="button scrolly">ROS</a></li>
+									<li><a href="#Mechanics" class="button scrolly">Mechanics</a></li>
+									<li><a href="#PowerBoard" class="button scrolly">Power Board</a></li>
+									<li><a href="#MotorControl" class="button scrolly">Motor Control</a></li>
+									<li><a href="#IA-ObjectDetection" class="button scrolly">IA - Object Detection</a></li>
+									
 								</ul>
 								<ul class="actions">
-									<li><a href="#" class="button scrolly">Micro Controller</a></li>
-									<li><a href="#" class="button scrolly">IA - Object Detection</a></li>
-									<li><a href="#" class="button scrolly">Actuator</a></li>
+									<li><a href="#MicroController" class="button scrolly">Micro Controller</a></li>
+									<li><a href="#ROS" class="button scrolly">ROS (Robot Operating System)</a></li>
+									<li><a href="#Actuator" class="button scrolly">Actuator</a></li>
 								</ul>
 								
 							</section>
 
 							<section id="Mechanics">
 								<h2>Mechanics</h2>
-								<p><span class="image right"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p><span class="image right"><img src="images/frame.jpg" alt="" /></span>This robot has been modeled using Onshape and it construction is a work in progress. The robot's frame is crafted from metal, using profiled sections, ensuring both solidity and lightness. Complementary components are made from PLA, 3D-printed with a 3D printer, and from wood and PMMA, cut using a laser cutter. Its dimensions must adhere to the conditions stipulated by the regulations of the French Robotics Cup. This construction method allows for great adaptability. </p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work in progress</a></li>
 								</ul>
 							</section>
 
-							<section id="Power Board">
+							<section id="PowerBoard">
 								<h2>Power Board</h2>
-								<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p><span class="image left"><img src="images/PCB_TEST.png" alt="" /></span>
+									The power board plays a crucial role as the intermediary connecting the battery to diverse modules, facilitating the conversion of electrical power sourced from the battery. Presently, the design process is underway using KiCad, an open-source software dedicated to printed circuit board design. Following the validation of the design, a Printed Circuit Board (PCB) will be manufactured. Additionally, a Battery Management System (BMS) will be placed between the battery and the power board to enhance battery protection.</p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work in progress</a></li>
 								</ul>
 							</section>
 
-							<section id="Motor control">
+							<section id="MotorControl">
 								<h2>Motor control</h2>
-								<p><span class="image right"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p><span class="image right"><img src="images/motor.jpg" alt="" /></span>The rolling base has been meticulously designed to function as a differential drive system, utilizing only two motors. The chosen motors are NEMA 17 stepper motors, renowned for their precision. These motors will be under the control of TMC2209 stepper motor drivers, with commands relayed through an ESP32. Communication between the ESP32 and the system will be facilitated via Bluetooth. In the initial phase, the motors will operate in an open-loop configuration.</p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work in progress</a></li>
 								</ul>
 							</section>
 
-							<section id="IA - Object Detection">
+							<section id="IA-ObjectDetection">
 								<h2>IA - Object Detection</h2>
-								<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p><span class="image left"><img src="images/music.jpg" alt="" /></span>The robot must be able to recognize its environment. One of the proposed solutions involves incorporating a camera and implementing IA to process real-time detection. Currently, I am in the process of training an AI model, YOLOv8, to recognize individuals in royalty-free images. This initial training phase serves as a foundation to familiarize the model with the process, paving the way to teach it to detect a broader range of objects. The plan is to deploy this AI on a Raspberry Pi for operational efficiency.</p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work in progress</a></li>
 								</ul>
 							</section>
 
-							<section id="Micro Controller">
+							<section id="MicroController">
 								<h2>Micro Controller</h2>
-								<p><span class="image right"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p><span class="image right"><img src="images/microship.jpg" alt="" /></span>The robot will ultimately be equipped with a Raspberry Pi and multiple ESP32. Initially, it will be outfitted only with ESP32 to handle trajectory planning, motor control, and potential sensors. Currently, I am in the process of implementing FreeRTOS on the ESP32 devices. The Raspberry Pi will be introduced later to integrate artificial intelligence (AI) and a Robot Operating System (ROS) architecture. </p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work in progress</a></li>
 								</ul>
 							</section>
 
 							<section id="ROS">
-								<h2>ROS</h2>
-								<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<h2>ROS (Robot Operating System)</h2>
+								<p><span class="image left"><img src="images/ROS.png" alt="" /></span>ROS is an open-source middleware framework providing communication and control tools for building robotic systems. I plan to integrate a ROS architecture into this project once the other modules are completed or at least well advanced. Currently, I have installed ROS on a Raspberry Pi, which I control via SSH, and I have acquired the fundamentals of this middleware. Additionally, I would like to add a LiDAR sensor. I will resume its development at a later stage.</p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work on hold</a></li>
 								</ul>
 							</section>
 
 							<section id="Actuator">
 								<h2>Actuator</h2>
-								<p><span class="image right"><img src="images/pic01.jpg" alt="" /></span>Afterward, the electronic design phase comes into play. I made the decision to use an Arduino Nano as the central processor. The next step involves soldering a perfboard to accommodate the Arduino, a power converter, four servo motors, a battery, and a switch. The choice of a perfboard is deliberate, as it provides a flexible platform for potential future expansions. This includes the incorporation of additional modules such as an ultrasonic sensor or a Bluetooth module.</p>
+								<p>The robot will require actuators to interact with the environment. The design of the robot has been conceived to be completely modular, enabling the flexibility to interchange actuators at will. The creation of these actuators will be the final stage of the robot's design process.</p>
 								<ul class="actions">
-									<li><a href="" class="button">Documentation will arrived quickly</a></li>
+									<li><a href="" class="button">Work on hold</a></li>
 								</ul>
 							</section>
 						</div>
