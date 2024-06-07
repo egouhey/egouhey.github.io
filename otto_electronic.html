@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Estebane Gouhey</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="ishibot.html">Ishibot</a></li>
+						<li><a href="otto.html">Otto</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Programming the otto robot</h1>
+
+								<section>
+									<h2>Introduction</h2>
+									<p>Here, you will learn how to design all the robot's electronics. </p>
+                                    <p> <u>WARNING</u> : If you're a beginner at welding (Hello 1A), ask for help, and don't start on your own. </p>
+									<ul class="actions">
+										<li><a href="#Component" class="button scrolly">Components</a></li>
+										<li><a href="#Design" class="button scrolly">Electronic design</a></li>
+									</ul>
+								</section>
+			
+								<section id="Component">
+									<h2>Components</h2>
+
+                                    <h3>Microcontroller</h3>
+									<p><span class="image left"><img src="images/arduino-nano-33-pinout.png" alt="" width="200" height="200" /></span>The Arduino Nano is a small development board based on the ATmega328P microcontroller, ideal for electronics beginners. It is easy to program using the Arduino IDE and is supported by an extensive online community. If you have a problem, the answer is on the internet.</p>
+                                    <p>So you need to upload your code via usb using Arduino Ide, but we'll look at that in the programming section. The other most important part is understanding the pinout. Firstly, there are the two power pins Vin and Gnd. The arduino nano must be supplied with a voltage of between 7 and 12V. Next, there's just one important concept to understand, and that's the GPIOs: these pins are useful for using motors, sensors etc... Each of them can be configured as input or output. There are two types: digital GPIOs, which can read or write O or 1, and analogue GPIOs, which can read or write a value between 0 and 1.</p>
+									<h3>Actuator</h3>
+									<p><span class="image right"><img src="images/servomotor.png" alt="" width="200" height="200" /></span>We will be using 4 servomotors for this robot, one for each joint. A servo motor uses a control signal to determine its position, typically rotating within a 180-degree range. It consists of a motor coupled with a feedback mechanism, allowing precise control of angular position. </p>
+                                    <p>To control it, it must be supplied with a voltage of 5V. In the opposite image, you can see that the servomotor is powered by the arduino nano's 5V GPIO, but it is not possible to do this with the 4 servomotors needed for this robot (the arduino nano is not capable of delivering sufficient current). And the last wire must be connected to a digital GPIO.</p>
+									<h3>Power supply</h3>
+									<p>We need to choose a battery to power our robot: I recommend using a 9V rechargeable battery. It is very easy to use, and can power all the other components for hours.</p>
+                                    <h3>Power electronics</h3>
+                                    <h4>7805</h4>
+									<p><span class="image right"><img src="images/7805.png" alt="" width="150" height="150" /></span>The battery comes out 9V, so you can directly supplied the arduino with it, but it must be reduce to suply servomotors. To do this, We will use the 7805 : it is an electrical component that take any voltage in input and give a 5v voltage in output. We must put 2 decoupling capacitor in input and output, as showned in the opposite picture.</p>
+                                    <h4>Switch</h4>
+									<p>It's important to add a switch, just after the battery's + pin. This means that the battery will not discharge </p>
+
+								</section>
+
+								<section id="Design">
+									<h2>Electronic Design</h2>
+									<p>Now that you've got everything you need, I recommend that you try doing all the electronic design yourself. You will learn better by doing this. I advise you to weld on perfboard, and to ask for advice if you have never welded before.</p>
+									<span class="image central"><img src="images/Electronic design.png" alt="" width="1000" height="500" /></span>
+								</section>
+
+								
+								
+						</div>
+					</section>
+
+
+
+			</div>
+
+
+
+
+
+
+		<!-- Footer -->
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>All the images used are royalty-free.</li>
+                </ul>
+            </div>
+        </footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
