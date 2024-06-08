@@ -1,0 +1,190 @@
+# Robot Otto d'Estébane
+
+Je vais ici réaliser un guide pour décrire et guider toutes personnes voulant réaliser le Robot Otto. Ce guide s’adresse à des débutants qui ne connaissent rien en robotique. Seules quelques notions de base en électronique et en informatique ne seront pas expliquées. Les explications liées à l’utilisation de l’imprimante 3D/onshape, à l’environnement de travail arduino ide et à la manière de souder une carte électronique ne seront pas non plus présentes : Il faudra demander au membre d’Eirbot pour apprendre à faire cela ( SURTOUT POUR LES SOUDURES ). Bonne lecture.
+
+## Le contexte
+
+Le robot otto est un projet en open-source. Il existe plusieurs formes, plusieurs manières de le faire. J’ai réalisé ce projet avec pour objectif de tout refaire de zéro pour apprendre, il est tout à fait possible de sauter une ou plusieurs étapes si elles ne vous intéressent pas. J’ai réalisé les étapes dans cet ordre : modélisation des pièces du robot, développement du système électronique, montage du robot et écriture du code du robot puis perfectionnement.
+
+## Modélisation des pièces
+
+Cette étape est sans conteste l’étape qui m’a pris le plus de temps. Le fait de devoir apprendre à utiliser oneshape et l’imprimante 3D y est pour beaucoup. De plus, il faut beaucoup réfléchir sur la modélisation des pièces pour penser à tout : les pièces doivent avoir la bonne taille pour accueillir les moteurs/piles/circuits… , doivent pouvoir s’imbriquer correctement entre elles, des espaces doivent être prévus pour pouvoir venir serrer des visses au bon endroit… J’ai imprimé 3 versions de chaque pièce avant de choisir le modèle final. Je ne vais pas décrire chaque version, je vais seulement vous commenter chaque pièce finale et vous donnerais les fichiers stl de chaque pièce : vous pourrez ainsi décider de les reprendre ou de les refaire.
+
+![texte de remplacement](./Pied.png)
+
+Le pied a été fait de manière symétrique pour qu’il puisse convenir pour les 2 pieds. Il est à noter que la surface en contact avec le sol est grande pour assurer au robot qu’il soit en équilibre. Les trous pour accueillir les moteurs épousent la forme du pignon d’un servomoteur. le reste du design n’est là que pour le style.
+
+![texte de remplacement](./tete.png)
+
+Il n’y a pas grand chose à dire sur la tête. Il faut faire attention aux dimensions des yeux pour le capteur à ultrason. Le système de clip a été trouvé au hasard mais fonctionne, je peux juste vous conseiller de mettre du biais pour faciliter l’accroche entre la tête et le corps. La hauteur/largeur/longueur est à adapter selon vos envies.
+
+![texte de remplacement](./corps.png)
+
+Le corps du robot est une partie assez complexe. Il doit être assez grand pour accueillir : une batterie, 2 servo moteur, une perfboard avec 2 convertisseurs de puissance et un arduino nano et beaucoup de fil. On notera que des encoches ont été réalisées sur 2 côtés opposés pour recevoir le système d’accroche entre le tête et le corps. Un fil va s'échapper de chaque moteur venant de chaque jambe : il faut donc prévoir des trous pour que ces fils puissent être relier à l’arduino. Ces trous sont fins mais longs pour permettre à la jambe de pouvoir tourner sans que les fils ne frottent. Finalement, il faut prévoir des trous pour que les moteurs puissent être reliés aux jambes, plusieurs solutions s’offrent à nous : on peut décider de faire des trous qui épousent la forme des moteurs ( ce qui est compliqué avec la précision des imprimantes 3D ), on peut aussi décider de laisser seulement dépasser la partie tournante du moteur. J’ai opté pour une solution que je n’ai pas vu sur les autres modèles d’Otto trouvés sur internet mais qui semble plus simple : les servomoteurs ont des encoches prévues pour accueillir une visse. On prévoit donc de léger sur-élèvement pour venir visser les servomoteurs dessus. Il ne reste plus qu’à laisser un rectangle suffisamment grand pour laisser passer le servo moteur et à prévoir correctement la hauteur du surélèvement pour qu’il puisse recevoir une visse sans qu’elle dépasse mais qu’il ne soit pas trop grand pour que le servomoteur dépasse en dessous du corps.
+
+![texte de remplacement|500](./jambe1.png)
+
+On termine avec la pièce la plus complexe. La jambe doit pouvoir relier le corps au pied, pouvoir accueillir un servo moteur entier. A noter qu’elle est elle aussi symétrique pour pouvoir être utilisée sur les 2 jambes. On va la décrire de haut en bas. Un petit trou ainsi qu’une tranché est prévu pour recevoir le engrenage de sortie d’un servo/ pignon du moteur du corps. D’un côté, un surélèvement est prévu pour visser une des visse du servomoteur, et en face une fenêtre prévue pour faciliter l'accès à cette visse. un grand trou est prévu pour laisser dépasser le servomoteur et un cylindre est prévu pour venir s’emboiter dans le pied. Les 2 grandes fenêtres sont prévues pour avoir une vue d’ensemble lors de l'assemblage final. Pour finir, une deuxième bar est prévu pour accueillir une 2ème visse.
+
+## Le circuit éléctronique
+
+Dans cette partie, on va décrire tous les éléments nécessaires à la réalisation de l'électronique de ce robot, puis on décrira la manière de les assembler. L’objectif est que vous n’ayez pas à faire toutes les recherches sur internet comme j’ai dû le faire.
+
+- Arduino nano
+L’arduino nano est notre carte mère : c’est elle qui va commander tous nos actionneurs et traiter les informations reçues par nos capteurs. On utilise l’environnement de travail arduino ide et on code en C++. Je vais maintenant décrire le rôle des pin qui vont nous être utiles. La carte doit être alimentée avec un tension entre 7 et 12V  sur le pin VIN. La masse doit être reliée au pin GND. Les pins Analogiques permettent d’envoyer un échelon ayant une valeur entre 0 et 1, alors que les pin Digitales permettent d’envoyer des pins ayant une valeur de 0 ou 1. Le pin 5v délivre une tension de 5V, ce qui peut être pratique. Pour commander nos servomoteurs, on utilisera les pins digitals par simplicité, même si on pourrait sans problème utiliser les pins analogiques. Les pins TX et RX sont intéressants mais on ne les utilisera pas avant le perfectionnement : Ils permettent de Transmettre ou de Recevoir des informations.
+
+![texte de remplacement](./nano.jfif)
+
+- les servomoteurs
+
+Ces moteurs sont des moteurs asservis en position. Ils sont très simples à commander : il suffit d’envoyer l’angle voulu et le moteur tournera du même angle. Ils sont cependant limités par un débattement angulaire de 180 degré : il faudra donc faire attention à ce que leur position d’équilibre soit de 90 degré pour leur permettre d’avoir de la marge quelle que soit le sens de rotation utilisé. Ces servomoteurs doivent être alimentés en 5V.
+
+![texte de remplacement](./servo.jfif)
+![texte de remplacement](./servobran.png)
+
+
+Voici comment brancher un servo moteur à une arduino nano. On notera que comme toutes les masses seront reliées, il suffit de relier le fil de masse à un point de masse quelconque sur la carte ( et non pas de mettre tous les fils au même point ) . De plus, on voit ici que le fil rouge est alimenté en 5V grâce à l’arduino. Dans notre cas, on doit alimenter 4 servomoteurs, ce qui tirerait trop de courant sur le pin 5V de l’arduino : On doit donc trouver un autre moyen d’alimenter les moteurs.
+
+- Le 7805, le convertisseur de puissance
+
+Voici comment brancher un servo moteur à une arduino nano. On notera que comme toutes les masses seront reliées, il suffit de relier le fil de masse à un point de masse quelconque sur la carte ( et non pas de mettre tous les fils au même point ) . De plus, on voit ici que le fil rouge est alimenté en 5V grâce à l’arduino. Dans notre cas, on doit alimenter 4 servomoteurs, ce qui tirerait trop de courant sur le pin 5V de l’arduino : On doit donc trouver un autre moyen d’alimenter les moteurs.
+
+![texte de remplacement](./7805.png)
+![texte de remplacement](./Schema.png)
+
+- Les interrupteurs
+
+On utilise un interrupteur. Je n’ai pas beaucoup de conseils à vous donner, il faudra vous adapter avec les interrupteurs mis à votre disposition. N’hésitez pas à percer un trou dans la tête de l’Otto pour le faire sortir et pouvoir utiliser l’interrupteur sans ouvrir l’Otto.
+
+- Le schéma final
+
+Voici le schéma le plus simple : il permet seulement d’alimenter les moteurs et de les contrôler.
+
+![texte de remplacement](./20230408_142644.jpg)
+
+## Monter le robot
+
+Cette partie va être concise. Il faut d’abord visser les moteurs dans le corps puis fixer les jambes et enfin mettre les moteurs dans les jambes, puis réussir à faire rentrer tous les fils dans le corps. Les modélisations que je fournis rendent l’assemblage entre les pieds et les jambes compliqué. Je ne donnerais pas de conseils particuliers, faites doucement et prenez votre temps.
+
+## Coder le comportement du robot
+
+On va utiliser l’environnement de travail arduino ide. On va utiliser 2 fonctions principales : setup, qui permet de paramétrer le robot, et loop, qui va nous permettre de réaliser des actions en boucle.
+
+```cpp
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
+
+- Les servomoteurs
+
+```cpp
+
+#include<Servo.h> //importation bibliothèque
+
+Servo servo1; // déclaration du servo
+int p=90; // déclaration point d'équilibre
+
+void setup() {
+  servo1.attach(6); // le servo est sur le pin 6
+  servo1.write(p); // le servo va au point d'équilibre
+}
+
+void loop() { // oscillation entre + et - 50
+  servo1.write(130);
+  servo1.write(40);
+}
+
+```
+
+- Premier programme final
+
+```cpp
+#include<Servo.h>
+
+Servo servoPG;
+Servo servoPD;
+Servo servoJG;
+Servo servoJD;
+int pjg=100;
+int pjd=40;
+int ppd=110;
+int ppg=110;
+void setup() {
+   servoPD.attach(4);
+   servoPG.attach(5);
+   servoJG.attach(6);
+   servoJD.attach(3);
+
+   servoJG.write(pjg);
+   servoJD.write(pjd);
+   servoPD.write(ppd);
+   servoPG.write(ppg);
+   delay(1000);
+}
+
+void loop() {
+    int c=0;
+  while (c!=33){
+    servoPG.write(ppg + c);
+    servoPD.write(ppd + c);
+    c=c+3;
+    delay(20);
+  }
+
+  c=0;
+  while(c!=44){
+    servoJG.write(pjg - c);
+    servoJD.write(pjd - c);
+    c=c+4;
+    delay(20);
+   }
+
+  c=30;
+  while(c!=-33){
+    servoPD.write(ppd +c);
+    servoPG.write(ppg +c);
+    c=c-3;
+    delay(20);
+   }
+
+  c=-40;
+  while(c!=40){
+    servoJG.write(pjg+c);
+    servoJD.write(pjd+c);
+    c=c+4;
+    delay(20);
+   }
+
+  c=-30;
+  while(c!=33){
+    servoPD.write(ppd +c);
+    servoPG.write(ppg +c);
+    c=c+3;
+    delay(20);
+   }
+
+
+  c=36;
+  while(c!=-4){
+    servoJG.write(pjg+c);
+    servoJD.write(pjd+c);
+    c=c-4;
+    delay(20);
+   }
+
+
+  c=30;
+  while(c!=-3){
+    servoPD.write(ppd +c);
+    servoPG.write(ppg +c);
+    c=c-3;
+    delay(20);
+   }
+```
