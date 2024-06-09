@@ -33,7 +33,7 @@ void setup() {
 
 void walk(int i) {
   int c = 0;
-  while (c != 33) {                     // first foot move
+  while (c != 33) {                     // feet movement
     servoPG.write(ppg + c);
     servoPD.write(ppd + c);
     c = c + 3;
@@ -41,7 +41,7 @@ void walk(int i) {
   }
 
   c = 0;
-  while (c != 44) {
+  while (c != 44) {                     // legs movement
     servoJG.write(pjg - c);
     servoJD.write(pjd - c);
     c = c + 4;
@@ -49,7 +49,7 @@ void walk(int i) {
   }
 
   c = 30;
-  while (c != -33) {
+  while (c != -33) {                    // feet movement
     servoPD.write(ppd + c);
     servoPG.write(ppg + c);
     c = c - 3;
@@ -57,7 +57,7 @@ void walk(int i) {
   }
 
   c = -40;
-  while (c != 40) {
+  while (c != 40) {                     // legs movement
     servoJG.write(pjg + c);
     servoJD.write(pjd + c);
     c = c + 4;
@@ -65,7 +65,7 @@ void walk(int i) {
   }
 
   c = -30;
-  while (c != 33) {
+  while (c != 33) {                     // feet movement
     servoPD.write(ppd + c);
     servoPG.write(ppg + c);
     c = c + 3;
@@ -73,15 +73,15 @@ void walk(int i) {
   }
 
   c = 36;
-  while (c != -4) {
-    servoJG.write(pjg + c);
+  while (c != -4) {                     // legs movement
+    servoJG.write(pjg + c);                   
     servoJD.write(pjd + c);
     c = c - 4;
     delay(i);
   }
 
   c = 30;
-  while (c != -3) {
+  while (c != -3) {                     // feet movement
     servoPD.write(ppd + c);
     servoPG.write(ppg + c);
     c = c - 3;
