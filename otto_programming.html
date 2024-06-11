@@ -36,7 +36,7 @@
 
 								<section>
 									<h2>Introduction</h2>
-									<p>Here, you will learn how to code the otto robot from scratch. By using Arduino IDE, you will learn C and C++.</p>
+									<p>In this section, you will learn how to code the otto robot from scratch. By using Arduino IDE, you will learn C and C++.</p>
 									<ul class="actions">
 										<li><a href="#ArduinoIDE" class="button scrolly">Arduino IDE</a></li>
 										<li><a href="#Servomotor" class="button scrolly">Servomotor</a></li>
@@ -46,7 +46,7 @@
 			
 								<section id="ArduinoIDE">
 									<h2>Arduino IDE</h2>
-									<p>	The Arduino IDE is a free software used to write and upload code to an Arduino board. It is designed to be easy to use for beginners and it is a popular tool for developers who want to create electronic projects. You have access to lot of key features : a code editor, a built-in libraries, an upload tool and a serial monitor</p>
+									<p>	The Arduino IDE is a free software used to write and upload code to an Arduino board. It is designed to be easy to use for beginners and it is a popular tool for developers who want to create electronic projects. You have access to lot of key features : a code editor, a built-in libraries, an upload tool and a serial monitor.</p>
 									<p>	To install the Arduino IDE, I recommend that you follow the tutorial at the following link : <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/">Tutorial</a></p>
 								
 									<h3>Structure of classic arduino code</h3>
@@ -93,7 +93,7 @@ void loop() {
 									<h2>Otto's Walking</h2>
 									<p>To make the otto robot walk, all you need to do is coordinate four servomotors. I suggest you try to do it yourself before you start reading the rest of this page, which will help you to progress quickly. Yet, you will find an example code downloadable at the end of this article.</p>
 									<h3>Explanation</h3>
-									<p>First at all, you need to configure 4 servomotors, as showned in the precedent part, by declaring four objects, four variable for pin etc... So the function setup() is simple. The function loop() is also very simple : we just call the function walk(). So here the robot will simply walk in a loop.</p>
+									<p>First at all, you need to configure four servomotors, as showned in the precedent part, by declaring four objects, four variable for pin etc... So the function setup() is simple. The function loop() is also very simple : we just call the function walk(). So here the robot will simply walk in a loop.</p>
 									<p>There are four global variables are declared just before the setup() function. They are needed to know the position of the balance. When all the motors are in the balance position, the robot is standing on its feet, as shown in the cover photo.</p>
 									<p>Additionally, the walk() function describes the walking movements of the otto. It is important that the position of the otto robot is the same at the beginning and end of the function, to avoid discontinuities in movements. I let you analyse each movement to understand how this work.</p>
 									<p>Finally, I'm just going to explain one concept, the difference between these two things :</p>

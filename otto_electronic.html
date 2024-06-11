@@ -36,7 +36,7 @@
 
 								<section>
 									<h2>Introduction</h2>
-									<p>Here, you will learn how to design all the robot's electronics. </p>
+									<p>In this section, you will learn how to design all the robot's electronics. </p>
                                     <p> <u>WARNING</u> : If you're a beginner at welding (Hello 1A), ask for help, and don't start on your own. </p>
 									<ul class="actions">
 										<li><a href="#Component" class="button scrolly">Components</a></li>
@@ -49,15 +49,15 @@
 
                                     <h3>Microcontroller</h3>
 									<p><span class="image left"><img src="images/arduino-nano-33-pinout.png" alt="" width="200" height="200" /></span>The Arduino Nano is a small development board based on the ATmega328P microcontroller, ideal for electronics beginners. It is easy to program using the Arduino IDE and is supported by an extensive online community. If you have a problem, the answer is on the internet.</p>
-                                    <p>So you need to upload your code via usb using Arduino Ide, but we will look at that in the programming section. The other most important part is understanding the pinout. Firstly, there are the two power pins Vin and Gnd. The arduino nano must be supplied with a voltage of between 7 and 12V. Next, there is just one important concept to understand, and that's the GPIOs: these pins are useful for using motors, sensors etc... Each of them can be configured as input or output. There are two types: digital GPIOs, which can read or write O or 1, and analogue GPIOs, which can read or write any value between 0 and 1.</p>
+                                    <p>So you need to upload your code via usb using Arduino Ide, but we will look at that in the programming section. The other most important part is understanding the pinout. Firstly, there are the two power pins Vin and Gnd. The arduino nano must be supplied with a voltage of between 7 and 12V. Next, there is just one important concept to understand, and that's the GPIOs: these pins are useful for using motors, sensors etc... Each of them can be configured as input or output. There are two types: digital GPIOs, which can read or write 0 or 1, and analogue GPIOs, which can read or write any value between 0 and 1.</p>
 									<h3>Actuator</h3>
-									<p><span class="image right"><img src="images/servomotor.png" alt="" width="200" height="200" /></span>We will be using 4 servomotors for this robot, one for each joint. A servo motor uses a control signal to determine its position, typically rotating within a 180-degree range. It consists of a motor coupled with a feedback mechanism, allowing precise control of angular position. </p>
-                                    <p>To control it, it must be supplied with a voltage of 5V. In the opposite image, you can see that the servomotor is powered by the arduino nano's 5V GPIO, but it is not possible to do this with the 4 servomotors needed for this robot (the arduino nano is not capable of delivering sufficient current). And the last wire must be connected to a digital GPIO.</p>
+									<p><span class="image right"><img src="images/servomotor.png" alt="" width="200" height="200" /></span>We will be using four servomotors for this robot, one for each joint. A servo motor uses a control signal to determine its position, typically rotating within a 180-degree range. It consists of a motor coupled with a feedback mechanism, allowing precise control of angular position. </p>
+                                    <p>To control it, it must be supplied with a voltage of 5V. In the opposite image, you can see that the servomotor is powered by the arduino nano's 5V GPIO, but it is not possible to do this with the four servomotors needed for this robot because the arduino nano is not capable of delivering sufficient current. And the last wire must be connected to a digital GPIO.</p>
 									<h3>Power supply</h3>
 									<p>We need to choose a battery to power our robot: I recommend using a 9V rechargeable battery. It is very easy to use, and can power all the other components for hours.</p>
                                     <h3>Power electronics</h3>
                                     <h4>7805</h4>
-									<p><span class="image right"><img src="images/7805.png" alt="" width="150" height="150" /></span>The battery comes out 9V, so you can directly supplied the arduino with it, but it must be reduce to supply servomotors. To do this, We will use the 7805 : it is an electrical component that take any voltage in input and give a 5v voltage in output. We must put 2 decoupling capacitor in input and output, as showned in the opposite picture.</p>
+									<p><span class="image right"><img src="images/7805.png" alt="" width="150" height="150" /></span>The battery comes out 9V, so you can directly supplied the arduino with it, but it must be reduce to supply servomotors. To do this, We will use the 7805 : it is an electrical component that take any voltage in input and give a 5v voltage in output. We must put two decoupling capacitor in input and output, as showned in the opposite picture.</p>
                                     <h4>Switch</h4>
 									<p>It is important to add a switch, just after the battery's + pin. This means that the battery will not discharge </p>
 
