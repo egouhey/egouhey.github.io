@@ -36,14 +36,85 @@
 
 								<section>
 									<h2>Introduction</h2>
-									<p></p>
+									<p>In this section, you will learn how to improve the otto robot.</p>
                                     <ul class="actions">
-										<li><a href="#Ultrason" class="button scrolly">Ultrason's detection</a></li>
+										<li><a href="#Ultrason" class="button scrolly">Ultrasound detection</a></li>
                                         <li><a href="#Bluetooth" class="button scrolly">Bluetooth</a></li>
                                         <li><a href="#Other" class="button scrolly">Other Ideas</a></li>
 									</ul>
 								</section>
-		
+
+								<section id="Ultrason">
+									<h2>Ultrasound detection</h2>
+									<p>The HC-SR04 is a unidirectional sensor that uses ultrasound to detect objects and calculate the distance between them. </p>
+									<div class="clear"></div>
+									<h3>Electronic</h3>
+									<p><span class="image right"><img src="images/HCSR04.jpg" alt="" /></span><span class="image right"><img src="images/ELEC_HCSR04.png" alt="" /></span>The HC-SR04 has four pins : two power supply pins, one trig pin and one echo pin. You need to supply it with 5V, and you can use the 5V output of the arduino board for this. Additionally, you need to connect the echo pin and the trig pin to digital pin of the arduino board.</p>
+									<div class="clear"></div>
+									<h3>Programming</h3>
+									<p>So this is a basic code for controlling an ultrason sensor. You need to configure the trig pin as an ouput and the echo pin as an inpout. Next, you need to send the ultrason signal by sending a pulse on the trig pin. Finally, you can read the time after which the signal returns, and calculating the distance bewteen the object and the sensor. The sensor can detected a maximum distance of 3 meters. </p>
+									<pre><code>#define trigPin 9                 		// Declaration of global variables
+#define echoPin 7
+										
+long duree;                       		// Declaration of global variables
+int distance;
+								
+void setup() {
+	Serial.begin(9600);			// Serial monitor communication initialization
+	pinMode(trigPin, OUTPUT);       	// Configuration of this pin as an output
+	pinMode(echoPin, INPUT);		// Configuration of this pin as an input
+}
+										
+void loop() {
+	digitalWrite(trigPin, LOW);     	// To make sure that it is at low state 
+	delayMicroseconds(5);
+	digitalWrite(trigPin, HIGH);    	// Send of the ultrason signal
+	delayMicroseconds(10);
+	digitalWrite(trigPin, LOW);
+	duree = pulseIn(echoPin, HIGH); 	// Reading the time after which the signal sent is received 
+	distance = duree * 0.034 / 2;   	// Calculating of the distance detected
+	Serial.print("distance =");     	// Printing results
+	Serial.println(distance);
+	delay(1000);                    	// Waiting 1 second before restarting
+}</code></pre>
+								</section>
+
+								<section id="Bluetooth">
+									<h2>Bluetooth</h2>
+									<p>The HC05 is an arduino mobile, enabling us to communicate with your phone using an application.</p>
+									<h3>Electronic</h3>
+									<p></span><span class="image right"><img src="images/hc05.webp" alt="" /></span><span class="image right"><img src="images/ELEC_HC05.png" alt="" /></span>The HC05 has six pins, but we use only four of them : two power supply pins, one TX pin and one RX pin. You need to supply it with 5V, and you can use the 5V output of the arduino board for this. Additionally, you need to connect the RX pin and the TX pin to digital pin of the arduino board.</p>
+									<div class="clear"></div>
+									<h3>Programming</h3>
+									<p>This program uses the SoftwareSerial library to communicate with an HC05 Bluetooth module, defining TX and RX pins as 10 and 11. In the setup, it initializes serial communication with the monitor and the Bluetooth module. In the loop, it checks for incoming Bluetooth data, printing received characters to the serial monitor or "Not connected" if no data is available.</p>
+									<pre><code>#include &ltSoftwareSerial.h&gt				// This is the library needed to use HC05
+#define TXPin 10					// Declaration of global variables
+#define RXPin 11														
+SoftwareSerial BluetoothSerial(RXPin, TXPin);		// Declaration of a SoftwareSerial.h library object
+																				
+void setup() {
+	Serial.begin(9600);				// Serial monitor communication initialization
+	BluetoothSerial.begin(9600);			// Bluetooth communication initialization
+}
+
+void loop() {
+	if (BluetoothSerial.available()) {		// If the Bluetooth is conneced to another device, BluetoothSerial.available() return true
+		char var = BluetoothSerial.read();	// BluetoothSerial.read() allows us to read the char received
+		Serial.println(var);			// Printing of the received value
+	}
+	else{
+		Serial.println("Not connected");	
+	}
+}</code></pre>
+									<h3>Communication</h3>
+									<p> I recommand using the "Arduino Bluetooth" application, developed by AKI32DEV. When the arduino is supplied, start by connecting via Bluetooth using your phone's basic settings. Then, the HC05 module will appear in the application. You can then communicate by sending characters. You can also configure commands.</p>
+								</section>
+
+								<section id="Other">
+									<h2>Other Ideas</h2>
+									<p>You can find lots of ideas on the <a href="https://www.ottodiy.com/">Ottodiy website</a>. I also give you the final code of my otto robot.</p>
+									<ul class="actions"><li><a href="Document_download/marche_normalement/marche_normalement.ino" class="button primary icon solid fa-download">Click here to download my final code</a></li></ul>
+								</section>
 						</div>
 					</section>
 			</div>
