@@ -315,6 +315,24 @@ input, select, textarea {
 			margin: 3em 0;
 		}
 
+	.video-container {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		height: 0;
+		overflow: hidden;
+		max-width: 100%;
+		margin: 0 auto; /* center the container */
+	}
+
+		.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
 	.align-left {
 		text-align: left;
 	}
@@ -570,6 +588,26 @@ input, select, textarea {
 					padding-top: 3em;
 				}
 
+
+		@media (max-width: 480px) {
+			.video-container {
+				padding-bottom: 40%; /* adjust the padding for smaller screens */
+			}
+			}
+
+			/* For medium screens (tablets) */
+			@media (min-width: 481px) and (max-width: 768px) {
+			.video-container {
+				padding-bottom: 50%; /* adjust the padding for medium screens */
+			}
+			}
+
+			/* For large screens (desktops) */
+			@media (min-width: 769px) {
+			.video-container {
+				padding-bottom: 56.25%; /* adjust the padding for large screens */
+			}
+		}
 		@media screen and (max-width: 1680px) {
 
 			.row {
@@ -3921,3 +3959,4 @@ input, select, textarea {
 			}
 
 		}
+
