@@ -320,11 +320,13 @@ input, select, textarea {
 		padding-bottom: 56.25%; /* 16:9 aspect ratio */
 		height: 0;
 		overflow: hidden;
-		max-width: 100%;
+		max-width: 	80%;
 		margin: 0 auto; /* center the container */
+		margin-top: 20px; /* ajoute une marge de 20px au-dessus de la vidéo */
+		margin-bottom: 20px;
 	}
 
-		.video-container iframe {
+	.video-container iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
