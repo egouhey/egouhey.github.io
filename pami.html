@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Pami</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Estébane Gouhey</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="ishibot.html">Ishibot</a></li>
+                        <li><a href="pami.html">Pami</a></li>
+						<li><a href="otto.html">Otto</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Pami</h1>
+
+							<section>
+								<h2>Introduction</h2>
+								<p><span class="image left"><img src="images/PAMI.jpg" alt="" /></span>Pami is a robot developed for the French Robotics Cup 2024. We developed this robot as a duo for Eirbot, a robotics association that takes part in the French Robotics Cup every year. This robot respects the strict static, electrical and behavioural rules of the cup. The biggest constraint is that it has to be very small and light.</p>
+								<ul class="actions">
+									<li><a href="#Component" class="button scrolly">Components</a></li>
+									<li><a href="#Modelisation" class="button scrolly">Modelisation</a></li>
+									<li><a href="#Electronic" class="button scrolly">Electronics</a></li>
+									<li><a href="#Motor" class="button scrolly">Motor Control</a></li>
+								</ul>
+								<ul class="actions">
+									<li><a href="#Communication" class="button scrolly">Wireless communication</a></li>
+									<li><a href="#Obstacle" class="button scrolly">Obstacle detection and path-finding</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Component">
+								<h2>Components</h2>
+								<p><span class="image right"><img src="images/component.jpg" alt="" /></span>The choice of components is very important to respect the rules and efficiency: they must be compact, light and powerful. For this project, the price is also important.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Modelisation">
+								<h2>Modelisation</h2>
+								<p><span class="image left"><img src="images/model_pami.png" alt="" /></span>The robot body must be able to accommodate all the components such as the battery, sensors, motors, microcontrollers, drivers.... It must also respect the dimensions imposed by the Coupe de France. Moreover, It has to be easy to use: changing the battery, a part or dismantling the robot must be simple.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Electronic">
+								<h2>Electronics</h2>
+								<p><span class="image right"><img src="images/elec.jpg" alt="" /></span>The main part of electronics is the interconnection between all the components, on a single small printed circuit. In addition, all the components need to be correctly powered.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Motor">
+								<h2>Motor Control</h2>
+								<p><span class="image left"><img src="images/micro_motor.jpg" alt="" /></span>Micromotors are selected on the basis of their weight, characteristics, price and the integration of an encoder. The encoder allows us to use a hand-made PID controller, running on an esp32. This part was the most difficult for us.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Communication">
+								<h2>Wireless communication</h2>
+								<p><span class="image right"><img src="images/wifi.jpg" alt="" /></span>The esp32 is equipped with a Bluetooth module and a Wi-Fi module. There is one pami server, and the others are clients: The pami server runs an asynchronous web server and the other pami can send it requests. Setting up a web server allows other devices to communicate with the server pami.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+							<section id="Obstacle">
+								<h2>Obstacle detection and path-finding</h2>
+								<p><span class="image left"><img src="images/dikkstra.png" alt="" /></span>We tried to implement path-finding algorithms on this robot. We had to use C and C++ to run them on esp32. The algorithms were designed but not implemented, due to the lack of preparation time before the Coupe de France.</p>
+								<ul class="actions">
+									<li><a href="" class="button">Documentation will arrived quicly</a></li>
+								</ul>
+							</section>
+							<div class="clear"></div>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>All the images used are royalty-free.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
