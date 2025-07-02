@@ -191,22 +191,84 @@ label {
   }
 }
 @media (max-width: 600px) {
-  main {
-    padding: 0.55rem 0.1rem;
-    min-height: 80vh;
+  /* Aération générale */
+  body, main {
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+    box-sizing: border-box;
+  }
+  /* Navbar sur 2 lignes de 2 liens */
+  .navbar ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.5em 1.2em !important;
+    padding: 0.5em 0 !important;
   }
   .navbar li {
-    margin: 0 0.22rem;
+    flex: 1 1 40%;
+    margin: 0.2em 0 !important;
+    text-align: center;
+    min-width: 40vw;
+    max-width: 48vw;
   }
   .navbar a {
-    font-size: 1.1em;
-    padding: 0.77rem 0.33rem;
+    font-size: 1.08em;
+    padding: 0.7em 0.2em !important;
+    white-space: nowrap;
   }
-  h1 {
-    font-size: 1.65em;
+  /* Sommaires (menus) centrés et espacés */
+  .projets-menu, .presentation-hero-text, .presentation-text {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1em !important;
+    margin-bottom: 1em !important;
   }
-  h2 {
-    font-size: 1.21em;
+  .projets-menu a {
+    font-size: 1.1em !important;
+    padding: 0.5em 0.2em !important;
+    margin: 0.2em 0 !important;
+    border-radius: 6px;
+    background: rgba(126,203,255,0.07);
+    display: inline-block;
+    min-width: 60vw;
+  }
+  .projets-menu h4 {
+    font-size: 1.15em !important;
+    margin-bottom: 0.5em !important;
+  }
+  /* Images et vidéos centrées et espacées */
+  .projets-content img,
+  .projets-content video,
+  .presentation-photo img,
+  .presentation-photo video,
+  .presentation-hero-media img,
+  .presentation-hero-media video {
+    margin: 1em auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10) !important;
+  }
+  /* Blocs principaux plus espacés */
+  .presentation-layout,
+  .presentation-hero,
+  .projets-layout {
+    margin: 1.2em 0 !important;
+    padding: 1em 0.2em !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 12px rgba(126,203,255,0.07) !important;
+  }
+  /* Titres et textes plus lisibles */
+  h1, h2, h3 {
+    text-align: center !important;
+    margin-top: 0.7em !important;
+    margin-bottom: 0.4em !important;
+    word-break: break-word !important;
+  }
+  /* Ajustement des boutons */
+  button {
+    margin: 1em auto !important;
+    display: block !important;
+    min-width: 60vw;
   }
   .form-group {
     max-width: 98vw;
@@ -233,22 +295,6 @@ label {
     align-items: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-  }
-  /* Forcer images et vidéos à ne jamais dépasser */
-  .projets-content img,
-  .projets-content video,
-  .presentation-photo img,
-  .presentation-photo video,
-  .presentation-hero-media img,
-  .presentation-hero-media video {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    min-width: 0 !important;
-    margin: 0.5em 0 !important;
-    object-fit: cover !important;
-    display: block !important;
-    box-sizing: border-box !important;
   }
   /* Supprimer les marges latérales inline sur les images de projets */
   .projets-content img[style], .projets-content video[style] {
