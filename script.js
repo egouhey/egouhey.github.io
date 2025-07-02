@@ -3,7 +3,7 @@ const pages = {
     <section class="page active">
       <div class="presentation-hero">
         <div class="presentation-hero-text">
-          <h1>Lorem Ipsum</h1>
+          <h1>AAA</h1>
           <h2>Lorem ipsum dolor sit amet</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.

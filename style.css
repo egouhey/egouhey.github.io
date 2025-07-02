@@ -217,29 +217,26 @@ label {
     font-size: 0.98em;
     padding: 1em 0 1em 0;
   }
+  /* Forcer tous les layouts horizontaux en colonne */
   .presentation-layout,
   .presentation-hero,
   .projets-layout {
     flex-direction: column !important;
-    gap: 1em !important;
+    gap: 0.5em !important;
     align-items: stretch !important;
     padding: 0.5em 0.1em !important;
   }
-  /* Cible les divs inline style de la page projets */
+  /* Cible tous les divs flex inline de la page projets */
   .projets-content > div[style*="display: flex"] {
     flex-direction: column !important;
-    gap: 0.5em !important;
+    gap: 0 !important;
     align-items: stretch !important;
-  }
-  .projets-content img,
-  .projets-content video {
-    max-width: 100% !important;
     width: 100% !important;
-    height: auto !important;
-    margin: 0.5em 0 !important;
-    object-fit: cover !important;
-    display: block !important;
+    max-width: 100% !important;
   }
+  /* Forcer images et vidéos à ne jamais dépasser */
+  .projets-content img,
+  .projets-content video,
   .presentation-photo img,
   .presentation-photo video,
   .presentation-hero-media img,
@@ -247,9 +244,23 @@ label {
     max-width: 100% !important;
     width: 100% !important;
     height: auto !important;
+    min-width: 0 !important;
     margin: 0.5em 0 !important;
     object-fit: cover !important;
     display: block !important;
+    box-sizing: border-box !important;
+  }
+  /* Supprimer les marges latérales inline sur les images de projets */
+  .projets-content img[style], .projets-content video[style] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Forcer le texte à rester dans l'écran */
+  .projets-content h1, .projets-content h2, .projets-content p, .projets-content button {
+    max-width: 100vw !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
   }
   .presentation-text,
   .presentation-hero-text {
