@@ -31,7 +31,7 @@ const pages = {
           <h1 id="pipe">2025 | Metal Pipe</h1>
           <h2>A holonomic robot participating in the French Robotics Cup with the Metal Pipe team</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
-            <img src="image/metal_fox.jpg" alt="Robotique" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/metal_fox.jpg" alt="Metal Pipe robot" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
             <video src="video/fox_2025.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>I am currently working on this holonomic robot that will participate in the French Robotics Cup in 2026.</p>
@@ -41,8 +41,8 @@ const pages = {
           <h1 id="game">2025 | Gamebot</h1>
           <h2>A homemade gaming console</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
-            <img src="image/gamebot.jpg" alt="Développement personnel" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
-            <img src="image/layout_gamebot.png" alt="Développement personnel" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/gamebot.jpg" alt="Gamebot console" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/layout_gamebot.png" alt="Gamebot layout" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
           </div>
           <p>I am currently working on this project in collaboration with my team members : We wanted to recreate a portable and affordable game console. I designed the PCB using KiCad, created the console casing, and we are currently developing small video games for both single-player and multiplayer.</p>
           <button>Documentation will arrive soon</button>
@@ -51,7 +51,7 @@ const pages = {
           <h1 id="POV">2025 | Persistence of Vision Display</h1>
           <h2>A POV display creates images by rapidly spinning lights, utilizing the persistence of vision effect</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
-            <img src="image/pov.jpg" alt="Développement personnel" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/pov.jpg" alt="POV display" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
             <video src="video/POV.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
             </div>
           <p>I completed this project as an academic project as part of my specialization in Robotics and Embedded Systems in my third year at the engineering school Enseirb-Matmeca. An ATmega328P is embedded on the PCB and controls the LEDs through a driver with which it communicates via SPI.</p>
@@ -60,7 +60,7 @@ const pages = {
           <h1 id="pami">2024 | Pami</h1>
           <h2>A differential robot participating in the French Robotics Cup with the Eirbot team</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
-            <img src="image/pami.jpg" alt="Open Source" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/pami.jpg" alt="Pami robot" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
             <video src="video/pami.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>I developed this small robot in collaboration with one of my classmates to participate in the 2024 edition of the French Robotics Cup as a PAMI : a small robot that must move quickly on the table. It is equipped with an ESP32, DC micro motors, and ultrasonic sensors. We also designed a PCB for interconnecting all these components.</p>
@@ -70,7 +70,7 @@ const pages = {
           <h1 id="otto">2023 | Otto</h1>
           <h2>A bipedal robot capable of sensing its environment and controllable via Bluetooth</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
-            <img src="image/otto.jpg" alt="Open Source" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/otto.jpg" alt="Otto robot" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
             <video src="video/otto.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>This project is the first electronics project I have completed. It was inspired by the open-source 
@@ -115,7 +115,7 @@ const pages = {
         ENSEIRB MATMECA
         </a>
       , Bordeaux Graduate School of Engineering</h2>
-      <h3> Master’s degree equivalent in Electronic Engineering, specialized in Robotics </h3>
+      <h3> Master's degree equivalent in Electronic Engineering, specialized in Robotics </h3>
       <hr>
       <h1>Skills</h1>
       <h3> Programming languages : Python, C, C++</h3>
