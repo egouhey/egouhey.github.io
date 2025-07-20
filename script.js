@@ -78,7 +78,11 @@ const pages = {
             Ottodiy
             </a>
           project. However, I decided to start from scratch : I redesigned my own 3D parts with Onshape, designed and assembled the electronics, and rewrote the code on Arduino IDE.</p>
-          <button>Documentation will arrive soon</button>
+          <button>
+            <a href="https://github.com/egouhey/Repo_robot_otto?tab=readme-ov-file" style="text-decoration: underline;">
+            View Documentation
+            </a>
+          /button> 
           <hr>
 
         </div>
