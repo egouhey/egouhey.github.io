@@ -82,7 +82,7 @@ const pages = {
             <a href="https://github.com/egouhey/Repo_robot_otto?tab=readme-ov-file" style="text-decoration: underline;">
             View Documentation
             </a>
-          /button> 
+          </button> 
           <hr>
 
         </div>
