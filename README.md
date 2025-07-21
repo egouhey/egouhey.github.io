@@ -1,2 +1,2 @@
 # egouhey.github.io
-Webiste
+Website
