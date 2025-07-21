@@ -64,7 +64,11 @@ const pages = {
             <video src="video/pami.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>I developed this small robot in collaboration with one of my classmates to participate in the 2024 edition of the French Robotics Cup as a PAMI : a small robot that must move quickly on the table. It is equipped with an ESP32, DC micro motors, and ultrasonic sensors. We also designed a PCB for interconnecting all these components.</p>
-          <button>Documentation will arrive soon</button>
+          <button>
+            <a href="https://github.com/egouhey/Repo_pami_2024" style="text-decoration: underline;">
+            View Documentation
+            </a>          
+          </button>
           <hr>
 
           <h1 id="otto">2023 | Otto</h1>
