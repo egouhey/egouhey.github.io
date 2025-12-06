@@ -37,6 +37,15 @@ const pages = {
           <p>I am currently working on this holonomic robot that will participate in the French Robotics Cup in 2026.</p>
           <hr>
 
+          <h1 id="game">2025 | Maze solving</h1>
+          <h2>Implementation of a navigation algorithm for a Unitree B2 quadruped robot using ROS2</h2>
+          <div style="display: flex; align-items: flex-start; gap: 90px;">
+            <img src="image/mujoco.png" alt="Fox1" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+            <img src="image/maze_solving.png" alt="Fox2" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
+          </div>
+          <p>The goal of this project is to make the Unitree B2 robot move through a maze simulated in Gazebo. To solve the maze, it uses a DFS algorithm.</p>
+          <hr>
+
           <h1 id="game">2025 | Gamebot</h1>
           <h2>A homemade gaming console</h2>
           <div style="display: flex; align-items: flex-start; gap: 90px;">
