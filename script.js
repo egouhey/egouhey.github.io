@@ -35,7 +35,6 @@ const pages = {
             <video src="video/fox_2025.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>I am currently working on this holonomic robot that will participate in the French Robotics Cup in 2026.</p>
-          <button>Documentation will arrive soon</button>
           <hr>
 
           <h1 id="game">2025 | Gamebot</h1>
@@ -45,7 +44,6 @@ const pages = {
             <img src="image/layout_gamebot.png" alt="Gamebot layout" style="max-width:317px;width:100%;height:179px;border-radius:10px;margin:1em 0 1em 1.2em;box-shadow:0 2px 12px rgba(0,0,0,0.12);object-fit:cover;">
           </div>
           <p>I am currently working on this project in collaboration with my team members : We wanted to recreate a portable and affordable game console. I designed the PCB using KiCad, created the console casing, and we are currently developing small video games for both single-player and multiplayer.</p>
-          <button>Documentation will arrive soon</button>
           <hr>
 
           <h1 id="POV">2025 | Persistence of Vision Display</h1>
@@ -64,11 +62,6 @@ const pages = {
             <video src="video/pami.mp4" width="317" height="179" style="border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.12);background:#1e335c;object-fit:cover;display:block;" autoplay muted loop playsinline></video>
           </div>
           <p>I developed this small robot in collaboration with one of my classmates to participate in the 2024 edition of the French Robotics Cup as a PAMI : a small robot that must move quickly on the table. It is equipped with an ESP32, DC micro motors, and ultrasonic sensors. We also designed a PCB for interconnecting all these components.</p>
-          <button>
-            <a href="https://github.com/egouhey/Repo_pami_2024" style="text-decoration: underline;">
-            View Documentation
-            </a>          
-          </button>
           <hr>
 
           <h1 id="otto">2023 | Otto</h1>
@@ -82,11 +75,6 @@ const pages = {
             Ottodiy
             </a>
           project. However, I decided to start from scratch : I redesigned my own 3D parts with Onshape, designed and assembled the electronics, and rewrote the code on Arduino IDE.</p>
-          <button>
-            <a href="https://github.com/egouhey/Repo_robot_otto?tab=readme-ov-file" style="text-decoration: underline;">
-            View Documentation
-            </a>
-          </button> 
           <hr>
 
         </div>
@@ -103,7 +91,7 @@ const pages = {
         Bloom Lasers
         </a>
       </h2>
-      <h3> Development of a robot for cleaning and checking machined blocks : Python, C, STM32, SolidWorks, KiCad</h3>
+      <h3> Development of a robot for cleaning and checking machined blocks : C++, C, Python, STM32, SolidWorks, Altium Designer</h3>
       <h2> 2024 | Intern at 
         <a href="https://www.rgu.ac.uk/" style="text-decoration: underline;">
         Robert Gordon University
@@ -123,7 +111,7 @@ const pages = {
         ENSEIRB MATMECA
         </a>
       , Bordeaux Graduate School of Engineering</h2>
-      <h3> Master's degree equivalent in Electronic Engineering, specialized in Robotics </h3>
+      <h3> Master's degree equivalent in Electronic Engineering, specialized in Robotics and Embedded Systems </h3>
       <hr>
       <h1>Skills</h1>
       <h3> Programming languages : Python, C, C++</h3>
@@ -134,10 +122,9 @@ const pages = {
       <h1>Associative commitment</h1>
       <h3> 2024 | Treasurer of the robotics association of ENSEIRB-MATMECA, Eirbot</h3>
       <h3> 2024 | Fab Manager of the ENSEIRB-MATMECA Fab Lab, Eirlab</h3>
-      <h3> 2024 | Captain of the Bordeaux-INP handball team</h3>
       <hr>
       <h1>Interests</h1>
-      <h3>Handball, Windsurf, Sailing, Robotics</h3>
+      <h3>Handball, Sailing, Robotics</h3>
       <hr>
         <a href="https://www.linkedin.com/in/estebane-gouhey/" style="text-decoration: none;">
         <button>My LinkedIn</button>
